@@ -1,0 +1,102 @@
+@model Nop.Plugin.Misc.Benchmarkemail.Models.ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<form asp-controller="BenchmarkEmail" asp-action="Configure" method="post">
+    <nop-cards id="benchmarkemail-cards">
+        <nop-card asp-name="benchmarkemail-general" asp-icon="fas fa-envelope" asp-title="@T("Nop.Plugin.Misc.Benchmarkemail.Title")" asp-hide-block-attribute-name="benchmarkemail-general" asp-hide="@Model.Enabled" asp-advanced="false">
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-label asp-for="Enabled" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="Enabled" />
+                        <span asp-validation-for="Enabled"></span>
+                    </div>
+                </div>
+                <nop-nested-setting asp-for="Enabled">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="ApiToken" />
+                        </div>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <nop-editor asp-for="ApiToken" />
+                                <div class="input-group-append">
+                                    <button type="submit" name="loadLists" class="btn btn-secondary">@T("Nop.Plugin.Misc.Benchmarkemail.LoadLists")</button>
+                                </div>
+                            </div>
+                            <span asp-validation-for="ApiToken"></span>
+                            <span class="form-text text-muted">@T("Nop.Plugin.Misc.Benchmarkemail.LoadLists.Hint")</span>
+                        </div>
+                    </div>
+                </nop-nested-setting>
+            </div>
+        </nop-card>
+        <nop-card asp-name="benchmarkemail-blogpost" asp-icon="fas fa-blog" asp-title="@T("Nop.Plugin.Misc.Benchmarkemail.EmailOnBlogPostEnabled")" asp-hide-block-attribute-name="benchmarkemail-blogpost" asp-hide="@(!Model.Enabled)" asp-advanced="false">
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-label asp-for="EmailOnBlogPostEnabled" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="EmailOnBlogPostEnabled" />
+                        <span asp-validation-for="EmailOnBlogPostEnabled"></span>
+                    </div>
+                </div>
+                <nop-nested-setting asp-for="EmailOnBlogPostEnabled">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="ListId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-select asp-for="ListId" asp-items="Model.AvailableLists" />
+                            <span asp-validation-for="ListId"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="EmailTemplateId" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="EmailTemplateId" />
+                            <span asp-validation-for="EmailTemplateId"></span>
+                            <span class="form-text text-muted">@T("Nop.Plugin.Misc.Benchmarkemail.EmailTemplateId.Hint")</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <nop-label asp-for="EmailScheduleDelayMinutes" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="EmailScheduleDelayMinutes" />
+                            <span asp-validation-for="EmailScheduleDelayMinutes"></span>
+                            <span class="form-text text-muted">@T("Nop.Plugin.Misc.Benchmarkemail.EmailScheduleDelayMinutes.Hint")</span>
+                        </div>
+                    </div>
+                </nop-nested-setting>
+            </div>
+        </nop-card>
+        <nop-card asp-name="benchmarkemail-misc" asp-icon="fas fa-cogs" asp-title="@T("Nop.Plugin.Misc.Benchmarkemail.LogRequests")" asp-hide-block-attribute-name="benchmarkemail-misc" asp-hide="false" asp-advanced="true">
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <nop-label asp-for="LogRequests" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="LogRequests" />
+                        <span asp-validation-for="LogRequests"></span>
+                    </div>
+                </div>
+            </div>
+        </nop-card>
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <button type="submit" name="save" class="btn btn-primary">@T("Admin.Common.Save")</button>
+            </div>
+        </div>
+    </nop-cards>
+</form>

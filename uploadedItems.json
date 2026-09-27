@@ -1,0 +1,9 @@
+﻿[
+   {
+    "Type": "Plugin",
+    "SupportedVersion": "4.90",
+    "DirectoryPath": "Benchmarkemail/nopCommerce-4.90/Misc.Benchmarkemail/",
+    "SystemName": "Misc.Benchmarkemail",
+    "SourceDirectoryPath": "Benchmarkemail/nopCommerce-4.90/Nop.Plugin.Misc.Benchmarkemail/"
+  }
+]
