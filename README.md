@@ -2,6 +2,8 @@
 
 This plugin provides a seamless integration between nopCommerce and BenchmarkEmail, allowing you to automate your email marketing efforts directly from your store.
 
+For more discussion, visit the [nopCommerce forum thread](https://www.nopcommerce.com/en/boards/topic/103391/open-source-integration-with-benchmarkemail-for-nopcommerce-zip-and-code-included#323606).
+
 ## Features
 
 - **Newsletter Synchronization**: Automatically syncs nopCommerce newsletter subscribers to a specified BenchmarkEmail contact list.
@@ -11,17 +13,7 @@ This plugin provides a seamless integration between nopCommerce and BenchmarkEma
 
 - **nopCommerce Version**: 4.90
 - **BenchmarkEmail Account**: A valid BenchmarkEmail account with API access.
-
-## Installation
-
-### Option 1: Using Binaries (Quick Install)
-1. Locate the `Misc.Benchmarkemail` folder (contained within the provided ZIP or repository).
-2. Upload the `Misc.Benchmarkemail` folder directly into the `\Plugins` directory of your nopCommerce installation.
-3. Restart your application.
-
-### Option 2: From Source
-1. Build the project using the provided `.csproj` file in `Nop.Plugin.Misc.Benchmarkemail`.
-2. Deploy the resulting binaries to the `\Plugins\Misc.Benchmarkemail` directory.
+ 
 
 ## Configuration
 
@@ -43,4 +35,5 @@ Once installed, navigate to **Administration > Configuration > Plugins** and fin
 - **API Errors**: Ensure your API token is correct and that the selected List ID exists in your BenchmarkEmail account.
 
 ---
-*This is an open-source integration designed to enhance the marketing capabilities of nopCommerce stores.*
+---
+* This is an open-source integration designed to enhance the marketing capabilities of nopCommerce stores. Read [nopCommerce community discussion](https://www.nopcommerce.com/en/boards/topic/103391/open-source-integration-with-benchmarkemail-for-nopcommerce-zip-and-code-included#323606) for more details.
