@@ -317,7 +317,6 @@ FodyWeavers.xsd
 .idea/
 
 # VS Code settings
-.vscode/
 
 # User-specific files
 *.suo
@@ -338,7 +337,6 @@ project.lock.json
 global.json
 
 # VS Code
-.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -347,3 +345,4 @@ global.json
 # OS files
 .DS_Store
 Thumbs.db
+config.bat
